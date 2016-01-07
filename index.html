@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link type="text/css" rel="stylesheet" href="index.css"/>
+  </head>
+  <body>
+    <input id="start_quiz0" type="radio" name="menu_box" class="checkbox_logic" checked="checked">
+    <input id="start_quiz1" type="radio" name="menu_box" class="checkbox_logic">
+    <input id="correct0" type="checkbox" class="checkbox_logic answer answer0" name="test" checked="checked">
+    <input id="correct1" type="checkbox" class="checkbox_logic answer answer1 correct">
+    <input id="wrong1_1" type="checkbox" class="checkbox_logic answer answer1">
+    <input id="wrong1_2" type="checkbox" class="checkbox_logic answer answer1">
+    <input id="wrong1_3" type="checkbox" class="checkbox_logic answer answer1">
+    <input id="correct2" type="checkbox" class="checkbox_logic answer answer2 correct">
+    <input id="wrong2_1" type="checkbox" class="checkbox_logic answer answer2">
+    <input id="wrong2_2" type="checkbox" class="checkbox_logic answer answer2">
+    <input id="wrong2_3" type="checkbox" class="checkbox_logic answer answer2">
+    <input id="correct3" type="checkbox" class="checkbox_logic answer answer3 correct">
+    <input id="wrong3_1" type="checkbox" class="checkbox_logic answer answer3">
+    <input id="wrong3_2" type="checkbox" class="checkbox_logic answer answer3">
+    <input id="wrong3_3" type="checkbox" class="checkbox_logic answer answer3">
+
+    <div id="header">
+      <a href="/">&#x21bb;</a>
+    </div>
+    <div id="main">
+      <div id="quiz_box">
+        <label id="quiz1_label" for="start_quiz1">Start Quiz 1</label>
+      </div>
+    </div>
+
+    <div id="quiz1" class="quiz">
+      <div id="num_correct_quiz1">
+      </div>
+
+      <div class="question" id="question1">
+        <div class="the_question">
+          Which one says test?
+        </div>
+        <div class="question_card">
+          <label for="wrong1_1">Bad 1</label>
+          <label for="wrong1_2">Bad 2</label>
+          <label for="correct1">Test</label>
+          <label for="wrong1_3">Bad 3</label>
+        </div>
+      </div>
+      <div class="question" id="question2">
+        <div class="the_question">
+          Which one says test 2?
+        </div>
+        <div class="question_card">
+          <label for="correct2">Test 2</label>
+          <label for="wrong2_1">Bad 1</label>
+          <label for="wrong2_2">Bad 2</label>
+          <label for="wrong2_3">Bad 3</label>
+        </div>
+      </div>
+      <div class="question" id="question3">
+        <div class="the_question">
+          Which one says test 3?
+        </div>
+        <div class="question_card">
+          <label for="wrong3_1">Bad 1</label>
+          <label for="wrong3_2">Bad 2</label>
+          <label for="wrong3_3">Bad 3</label>
+          <label for="correct3">Test 3</label>
+        </div>
+      </div>
+      <div class="question" id="question4">
+        <div class="question_card">
+          <p id="final_num_correct_quiz1"></p>
+          <label for="start_quiz0">Back to Menu</label>
+        </div>
+      </div>
+    </div>
+  </body>
+<html>

@@ -1,0 +1,155 @@
+body{
+  overflow: hidden;
+  margin: 0px;
+  background: #2C8437;
+}
+
+.checkbox_logic {
+  visibility: hidden;
+  position: absolute;
+  left: -1000px;
+}
+
+#header {
+  padding: 10px 15px;
+  background: #8B2E5F;
+}
+
+#header a {
+  text-decoration: none;
+  color: #004208;
+  background: #AA6E39;
+  padding: 3px 5px;
+  font-size: 20px;
+}
+
+#main, .question {
+  padding: 30px;
+}
+
+.quiz, #main {
+  position: absolute;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  transition-property: left, right, visibility, overflow;
+  transition-duration: 1s;
+  transition-delay: 0s;
+  visibility: hidden;
+  overflow: hidden;
+  color: #552800;
+}
+
+div#quiz_box {
+  display: inline-block;
+  padding: 30px;
+  box-sizing: border-box;
+  background: #AA6E39;
+}
+
+#start_quiz0:checked ~ #main {
+  left: 0%;
+  visibility: visible;
+}
+
+#start_quiz1:checked ~ #main {
+  left: -100%;
+}
+#start_quiz1:checked ~ #quiz1 {
+  left: 0%;
+  visibility: visible;
+  overflow: visible;
+}
+
+.answer ~ .quiz .question {
+  position: absolute;
+  top: 50px;
+  left: 100%;
+  transition: all 1s ease-in-out;
+  visibility: hidden;
+  width: 100%;
+  margin: auto;
+}
+
+.the_question {
+  color: rgba(85, 40, 0, 1);
+  font-size: 40px;
+}
+
+.answer0:checked ~ .quiz #question1 {
+  left: 0%;
+  visibility: visible;
+}
+
+.answer1:checked ~ .quiz #question1 {
+  left: -100%;
+}
+
+.answer1:checked ~ .quiz #question2 {
+  left: 0%;
+  visibility: visible;
+}
+
+.answer2:checked ~ .quiz #question3 {
+  left: 0%;
+  visibility: visible;
+}
+
+.answer2:checked ~ .quiz #question2 {
+  left: -100%;
+}
+
+.answer3:checked ~ .quiz #question3 {
+  left: -100%;
+}
+.answer3:checked ~ .quiz #question4 {
+  left: 0%;
+  visibility: visible;
+}
+
+#start_quiz1:checked ~ .answer3:checked ~ #quiz1 {
+  overflow: hidden;
+}
+
+.question_card {
+  margin: auto;
+  width: 75px;
+  padding: 30px;
+  background: lightgrey;
+}
+
+label {
+  display: block;
+  margin: auto;
+}
+
+.correct:checked {
+  counter-increment: correct;
+}
+
+#num_correct_quiz1 {
+  position: relative;
+  top: -35px;
+  left: 55px;
+  background: #FFD2AA;
+  display: inline-block;
+  padding: 5px 10px;
+  visibility: hidden;
+  transition-property: visibility;
+  transition-duration: 0s;
+  transition-delay: 1s;
+}
+
+#start_quiz1:checked ~ .quiz #num_correct_quiz1 {
+  visibility: visible;
+}
+
+#num_correct_quiz1:after, #final_num_correct_quiz1:after,    #quiz1_label:after {
+  content: '  Correct: ' counter(correct) '/3';
+}
+
+#correct1:checked ~ #correct2:checked ~ #correct3:checked ~ .quiz #num_correct_quiz1:after, 
+#correct1:checked ~ #correct2:checked ~ #correct3:checked ~ .quiz #final_num_correct_quiz1:after, 
+#correct1:checked ~ #correct2:checked ~ #correct3:checked ~ #main #quiz1_label:after {
+  content: '  All Correct!'
+}
