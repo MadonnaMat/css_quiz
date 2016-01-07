@@ -9,24 +9,20 @@ body{
   position: absolute;
   left: -1000px;
 }
-
-br.checkbox_logic{
-  display: none;
-}
-
-#checkbox_logic_spy:checked {
-  visibility: visible;
-  position: static;
-  left: 0;
-}
+#checkbox_logic_spy:checked,
 #checkbox_logic_spy:checked ~ .checkbox_logic {
   visibility: visible;
   position: static;
   left: 0;
 }
+
+br.checkbox_logic{
+  display: none;
+}
 #checkbox_logic_spy:checked ~ br.checkbox_logic{
   display: block;
 }
+
 #header {
   padding: 10px 15px;
   background: #8B2E5F;
@@ -39,12 +35,12 @@ br.checkbox_logic{
   padding: 3px 5px;
   font-size: 20px;
 }
-
 #header #checkbox_logic_spy_label {
   float: right;
   background: #FFD2AA;
   padding: 5px 10px;
 }
+
 #checkbox_logic_spy ~ #header #checkbox_logic_spy_label:after {
   content: 'See the checkbox logic';
 }
@@ -77,29 +73,6 @@ div#quiz_box {
   background: #AA6E39;
 }
 
-#start_quiz0:checked ~ #main {
-  left: 0%;
-  visibility: visible;
-}
-
-#start_quiz1:checked ~ #main {
-  left: -100%;
-}
-#start_quiz1:checked ~ #quiz1 {
-  left: 0%;
-  visibility: visible;
-  overflow: visible;
-}
-
-#start_quiz2:checked ~ #main {
-  left: -100%;
-}
-#start_quiz2:checked ~ #quiz2 {
-  left: 0%;
-  visibility: visible;
-  overflow: visible;
-}
-
 .answer ~ .quiz .question {
   position: absolute;
   top: 50px;
@@ -114,73 +87,58 @@ div#quiz_box {
 .the_question {
   color: rgba(85, 40, 0, 1);
   font-size: 40px;
+  opacity: 0;
 }
 
-.start_quiz1:checked ~ .quiz #question1 {
-  left: 0%;
-  visibility: visible;
-}
 
-.answer1:checked ~ .quiz #question1 {
-  left: -100%;
-}
-
-.answer1:checked ~ .quiz #question2 {
-  left: 0%;
-  visibility: visible;
-}
-
-.answer2:checked ~ .quiz #question3 {
-  left: 0%;
-  visibility: visible;
-}
-
-.answer2:checked ~ .quiz #question2 {
-  left: -100%;
-}
-
-.answer3:checked ~ .quiz #question3 {
-  left: -100%;
-}
-.answer3:checked ~ .quiz #question4 {
-  left: 0%;
-  visibility: visible;
-}
-
-#start_quiz1:checked ~ .answer3:checked ~ #quiz1 {
-  overflow: hidden;
-}
-
-.start_quiz2:checked ~ .quiz #question5 {
-  left: 0%;
-  visibility: visible;
-}
-
-.answer5:checked ~ .quiz #question5 {
-  left: -100%;
-}
-
-.answer5:checked ~ .quiz #question6 {
-  left: 0%;
-  visibility: visible;
-}
-
-.answer6:checked ~ .quiz #question6 {
-  left: -100%;
-}
-.answer6:checked ~ .quiz #question7 {
-  left: 0%;
-  visibility: visible;
-}
-
-.answer7:checked ~ .quiz #question7 {
-  left: -100%;
-}
+#start_quiz0:checked ~ #main ,
+#start_quiz1:checked ~ #quiz1 ,
+#start_quiz2:checked ~ #quiz2 ,
+.start_quiz1:checked ~ .quiz #question1,
+.answer1:checked ~ .quiz #question2 ,
+.answer2:checked ~ .quiz #question3 ,
+.answer3:checked ~ .quiz #question4 ,
+.start_quiz2:checked ~ .quiz #question5 ,
+.answer5:checked ~ .quiz #question6 ,
+.answer6:checked ~ .quiz #question7 ,
 .answer7:checked ~ .quiz #question8 {
   left: 0%;
   visibility: visible;
 }
+#start_quiz1:checked ~ #quiz1 ,
+#start_quiz2:checked ~ #quiz2 {
+  overflow: visible;
+}
 
+#start_quiz1:checked ~ #main ,
+#start_quiz2:checked ~ #main ,
+.answer1:checked ~ .quiz #question1 ,
+.answer2:checked ~ .quiz #question2 ,
+.answer3:checked ~ .quiz #question3 ,
+.answer5:checked ~ .quiz #question5 ,
+.answer6:checked ~ .quiz #question6 ,
+.answer7:checked ~ .quiz #question7 {
+  left: -100%;
+}
+
+.start_quiz1:checked ~ .quiz #question1 .the_question,
+.answer1:checked ~ .quiz #question2 .the_question ,
+.answer2:checked ~ .quiz #question3 .the_question ,
+.start_quiz2:checked ~ .quiz #question5 .the_question,
+.answer5:checked ~ .quiz #question6 .the_question ,
+.answer6:checked ~ .quiz #question7 .the_question {
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: .5s;
+  transition-delay: 1s;
+}
+
+.start_quiz1:checked ~ .quiz #question1 .the_question,
+.start_quiz2:checked ~ .quiz #question5 .the_question {
+  transition-delay: 1.5s;
+}
+
+#start_quiz1:checked ~ .answer3:checked ~ #quiz1 ,
 #start_quiz2:checked ~ .answer7:checked ~ #quiz2 {
   overflow: hidden;
 }
@@ -233,6 +191,14 @@ label {
   background: #FFD2AA;
   display: inline-block;
   padding: 5px 10px;
+  opacity: 0;
+}
+
+.start_quiz:checked ~ .quiz .num_correct_quiz{
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: .5s;
+  transition-delay: 1s;
 }
 
 #num_correct_quiz1:after, #final_num_correct_quiz1:after, #quiz1_label:after {
@@ -245,10 +211,7 @@ label {
 
 #correct1:checked ~ #correct2:checked ~ #correct3:checked ~ .quiz #num_correct_quiz1:after, 
 #correct1:checked ~ #correct2:checked ~ #correct3:checked ~ .quiz #final_num_correct_quiz1:after, 
-#correct1:checked ~ #correct2:checked ~ #correct3:checked ~ #main #quiz1_label:after {
-  content: '  All Correct!'
-}
-
+#correct1:checked ~ #correct2:checked ~ #correct3:checked ~ #main #quiz1_label:after ,
 #correct5:checked ~ #correct6:checked ~ #correct7:checked ~ .quiz #num_correct_quiz2:after, 
 #correct5:checked ~ #correct6:checked ~ #correct7:checked ~ .quiz #final_num_correct_quiz2:after, 
 #correct5:checked ~ #correct6:checked ~ #correct7:checked ~ #main #quiz2_label:after {
