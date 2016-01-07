@@ -8,31 +8,46 @@
   <body>
     <input id="start_quiz0" type="radio" name="menu_box" class="checkbox_logic" checked="checked">
     <input id="start_quiz1" type="radio" name="menu_box" class="checkbox_logic">
-    <input id="correct0" type="checkbox" class="checkbox_logic answer answer0" name="test" checked="checked">
-    <input id="correct1" type="checkbox" class="checkbox_logic answer answer1 correct">
-    <input id="wrong1_1" type="checkbox" class="checkbox_logic answer answer1">
-    <input id="wrong1_2" type="checkbox" class="checkbox_logic answer answer1">
-    <input id="wrong1_3" type="checkbox" class="checkbox_logic answer answer1">
-    <input id="correct2" type="checkbox" class="checkbox_logic answer answer2 correct">
-    <input id="wrong2_1" type="checkbox" class="checkbox_logic answer answer2">
-    <input id="wrong2_2" type="checkbox" class="checkbox_logic answer answer2">
-    <input id="wrong2_3" type="checkbox" class="checkbox_logic answer answer2">
-    <input id="correct3" type="checkbox" class="checkbox_logic answer answer3 correct">
-    <input id="wrong3_1" type="checkbox" class="checkbox_logic answer answer3">
-    <input id="wrong3_2" type="checkbox" class="checkbox_logic answer answer3">
-    <input id="wrong3_3" type="checkbox" class="checkbox_logic answer answer3">
+    <input id="start_quiz2" type="radio" name="menu_box" class="checkbox_logic">
+    <input id="correct0" type="checkbox" class="checkbox_logic quiz1_answer answer answer0" name="test" checked="checked">
+    <input id="correct1" type="checkbox" class="checkbox_logic quiz1_answer answer answer1 correct">
+    <input id="wrong1_1" type="checkbox" class="checkbox_logic quiz1_answer answer answer1">
+    <input id="wrong1_2" type="checkbox" class="checkbox_logic quiz1_answer answer answer1">
+    <input id="wrong1_3" type="checkbox" class="checkbox_logic quiz1_answer answer answer1">
+    <input id="correct2" type="checkbox" class="checkbox_logic quiz1_answer answer answer2 correct">
+    <input id="wrong2_1" type="checkbox" class="checkbox_logic quiz1_answer answer answer2">
+    <input id="wrong2_2" type="checkbox" class="checkbox_logic quiz1_answer answer answer2">
+    <input id="wrong2_3" type="checkbox" class="checkbox_logic quiz1_answer answer answer2">
+    <input id="correct3" type="checkbox" class="checkbox_logic quiz1_answer answer answer3 correct">
+    <input id="wrong3_1" type="checkbox" class="checkbox_logic quiz1_answer answer answer3">
+    <input id="wrong3_2" type="checkbox" class="checkbox_logic quiz1_answer answer answer3">
+    <input id="wrong3_3" type="checkbox" class="checkbox_logic quiz1_answer answer answer3">
+    <input id="correct4" type="checkbox" class="checkbox_logic quiz2_answer answer answer4" name="test" checked="checked">
+    <input id="correct5" type="checkbox" class="checkbox_logic quiz2_answer answer answer5 correct">
+    <input id="wrong5_1" type="checkbox" class="checkbox_logic quiz2_answer answer answer5">
+    <input id="wrong5_2" type="checkbox" class="checkbox_logic quiz2_answer answer answer5">
+    <input id="wrong5_3" type="checkbox" class="checkbox_logic quiz2_answer answer answer5">
+    <input id="correct6" type="checkbox" class="checkbox_logic quiz2_answer answer answer6 correct">
+    <input id="wrong6_1" type="checkbox" class="checkbox_logic quiz2_answer answer answer6">
+    <input id="wrong6_2" type="checkbox" class="checkbox_logic quiz2_answer answer answer6">
+    <input id="wrong6_3" type="checkbox" class="checkbox_logic quiz2_answer answer answer6">
+    <input id="correct7" type="checkbox" class="checkbox_logic quiz2_answer answer answer7 correct">
+    <input id="wrong7_1" type="checkbox" class="checkbox_logic quiz2_answer answer answer7">
+    <input id="wrong7_2" type="checkbox" class="checkbox_logic quiz2_answer answer answer7">
+    <input id="wrong7_3" type="checkbox" class="checkbox_logic quiz2_answer answer answer7">
 
     <div id="header">
-      <a href="/">&#x21bb;</a>
+      <a href=".">&#x21bb;</a>
     </div>
     <div id="main">
       <div id="quiz_box">
         <label id="quiz1_label" for="start_quiz1">Start Quiz 1</label>
+        <label id="quiz2_label" for="start_quiz2">Start Quiz 2</label>
       </div>
     </div>
 
     <div id="quiz1" class="quiz">
-      <div id="num_correct_quiz1">
+      <div id="num_correct_quiz1" class="num_correct_quiz">
       </div>
 
       <div class="question" id="question1">
@@ -70,7 +85,56 @@
       </div>
       <div class="question" id="question4">
         <div class="question_card">
-          <p id="final_num_correct_quiz1"></p>
+          <p id="final_num_correct_quiz1" class="final_num_correct_quiz"></p>
+          <label for="start_quiz0">Back to Menu</label>
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz2" class="quiz">
+      <div id="num_correct_quiz2" class="num_correct_quiz">
+      </div>
+
+      <div class="question image_question" id="question5">
+        <div class="the_question">
+          Which one is a baboon?
+        </div>
+        <div class="question_card">
+          <label for="wrong5_1"><img src="https://homepages.cae.wisc.edu/~ece533/images/airplane.png"/></label>
+          <label for="wrong5_2"><img src="https://homepages.cae.wisc.edu/~ece533/images/arctichare.png"/></label>
+          <label for="correct5"><img src="https://homepages.cae.wisc.edu/~ece533/images/baboon.png"/></label>
+          <label for="wrong5_3"><img src="https://homepages.cae.wisc.edu/~ece533/images/barbara.png"/></label>
+        </div>
+      </div>
+      <div class="question image_question" id="question6">
+        <div class="the_question">
+          Which one is a boat?
+        </div>
+        <div class="question_card">
+          <label for="correct6"><img src="https://homepages.cae.wisc.edu/~ece533/images/boat.png"/></label>
+          <label for="wrong6_1"><img src="https://homepages.cae.wisc.edu/~ece533/images/cat.png"/></label>
+          <label for="wrong6_2"><img src="https://homepages.cae.wisc.edu/~ece533/images/cat.png"/></label>
+          <label for="wrong6_3"><img src="https://homepages.cae.wisc.edu/~ece533/images/frymire.png"></label>
+        </div>
+      </div>
+      <div class="question video_question" id="question7">
+        <div class="the_question">
+          What kills the butterfly?
+          <video  width="400" controls>
+            <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"></source>
+            <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"></source>
+          </video>
+        </div>
+        <div class="question_card">
+          <label for="wrong7_1">A long, fruitful life</label>
+          <label for="wrong7_2">Bunny gone mad</label>
+          <label for="wrong7_3">What is dead may never die</label>
+          <label for="correct7">An Apple</label>
+        </div>
+      </div>
+      <div class="question" id="question8">
+        <div class="question_card">
+          <p id="final_num_correct_quiz2" class="final_num_correct_quiz"></p>
           <label for="start_quiz0">Back to Menu</label>
         </div>
       </div>

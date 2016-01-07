@@ -61,6 +61,15 @@ div#quiz_box {
   overflow: visible;
 }
 
+#start_quiz2:checked ~ #main {
+  left: -100%;
+}
+#start_quiz2:checked ~ #quiz2 {
+  left: 0%;
+  visibility: visible;
+  overflow: visible;
+}
+
 .answer ~ .quiz .question {
   position: absolute;
   top: 50px;
@@ -70,6 +79,7 @@ div#quiz_box {
   width: 100%;
   margin: auto;
 }
+
 
 .the_question {
   color: rgba(85, 40, 0, 1);
@@ -111,9 +121,43 @@ div#quiz_box {
   overflow: hidden;
 }
 
+.answer4:checked ~ .quiz #question5 {
+  left: 0%;
+  visibility: visible;
+}
+
+.answer5:checked ~ .quiz #question5 {
+  left: -100%;
+}
+
+.answer5:checked ~ .quiz #question6 {
+  left: 0%;
+  visibility: visible;
+}
+
+.answer6:checked ~ .quiz #question6 {
+  left: -100%;
+}
+.answer6:checked ~ .quiz #question7 {
+  left: 0%;
+  visibility: visible;
+}
+
+.answer7:checked ~ .quiz #question7 {
+  left: -100%;
+}
+.answer7:checked ~ .quiz #question8 {
+  left: 0%;
+  visibility: visible;
+}
+
+#start_quiz2:checked ~ .answer7:checked ~ #quiz2 {
+  overflow: hidden;
+}
+
 .question_card {
   margin: auto;
-  width: 75px;
+  width: 130px;
   padding: 30px;
   background: lightgrey;
 }
@@ -121,35 +165,62 @@ div#quiz_box {
 label {
   display: block;
   margin: auto;
+  padding: 5px 0px;
+  cursor: pointer;
 }
 
-.correct:checked {
+.question.image_question .question_card label img {
+  width: 160px;
+}
+
+.question.image_question .question_card label {
+  display: inline-block;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.question.image_question .question_card {
+  width: 344px;
+}
+
+.question.video_question .the_question video {
+  position: absolute;
+  left: 30px;
+  top: 90px;
+}
+
+.quiz1_answer.correct:checked {
   counter-increment: correct;
 }
+.quiz2_answer.correct:checked {
+  counter-increment: correct_two;
+}
 
-#num_correct_quiz1 {
+.num_correct_quiz {
   position: relative;
   top: -35px;
   left: 55px;
   background: #FFD2AA;
   display: inline-block;
   padding: 5px 10px;
-  visibility: hidden;
-  transition-property: visibility;
-  transition-duration: 0s;
-  transition-delay: 1s;
 }
 
-#start_quiz1:checked ~ .quiz #num_correct_quiz1 {
-  visibility: visible;
-}
-
-#num_correct_quiz1:after, #final_num_correct_quiz1:after,    #quiz1_label:after {
+#num_correct_quiz1:after, #final_num_correct_quiz1:after, #quiz1_label:after {
   content: '  Correct: ' counter(correct) '/3';
+}
+
+#num_correct_quiz2:after, #final_num_correct_quiz2:after, #quiz2_label:after {
+  content: '  Correct: ' counter(correct_two) '/3';
 }
 
 #correct1:checked ~ #correct2:checked ~ #correct3:checked ~ .quiz #num_correct_quiz1:after, 
 #correct1:checked ~ #correct2:checked ~ #correct3:checked ~ .quiz #final_num_correct_quiz1:after, 
 #correct1:checked ~ #correct2:checked ~ #correct3:checked ~ #main #quiz1_label:after {
+  content: '  All Correct!'
+}
+
+#correct5:checked ~ #correct6:checked ~ #correct7:checked ~ .quiz #num_correct_quiz2:after, 
+#correct5:checked ~ #correct6:checked ~ #correct7:checked ~ .quiz #final_num_correct_quiz2:after, 
+#correct5:checked ~ #correct6:checked ~ #correct7:checked ~ #main #quiz2_label:after {
   content: '  All Correct!'
 }
