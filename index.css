@@ -10,6 +10,23 @@ body{
   left: -1000px;
 }
 
+br.checkbox_logic{
+  display: none;
+}
+
+#checkbox_logic_spy:checked {
+  visibility: visible;
+  position: static;
+  left: 0;
+}
+#checkbox_logic_spy:checked ~ .checkbox_logic {
+  visibility: visible;
+  position: static;
+  left: 0;
+}
+#checkbox_logic_spy:checked ~ br.checkbox_logic{
+  display: block;
+}
 #header {
   padding: 10px 15px;
   background: #8B2E5F;
@@ -22,6 +39,19 @@ body{
   padding: 3px 5px;
   font-size: 20px;
 }
+
+#header #checkbox_logic_spy_label {
+  float: right;
+  background: #FFD2AA;
+  padding: 5px 10px;
+}
+#checkbox_logic_spy ~ #header #checkbox_logic_spy_label:after {
+  content: 'See the checkbox logic';
+}
+#checkbox_logic_spy:checked ~ #header #checkbox_logic_spy_label:after {
+  content: 'Hide the checkbox logic';
+}
+
 
 #main, .question {
   padding: 30px;
