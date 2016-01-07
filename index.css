@@ -116,7 +116,7 @@ div#quiz_box {
   font-size: 40px;
 }
 
-.answer0:checked ~ .quiz #question1 {
+.start_quiz1:checked ~ .quiz #question1 {
   left: 0%;
   visibility: visible;
 }
@@ -151,7 +151,7 @@ div#quiz_box {
   overflow: hidden;
 }
 
-.answer4:checked ~ .quiz #question5 {
+.start_quiz2:checked ~ .quiz #question5 {
   left: 0%;
   visibility: visible;
 }
